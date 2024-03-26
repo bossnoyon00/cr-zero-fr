@@ -1,0 +1,26 @@
+.fav-container {
+  padding: 50px 0 100px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fav-container .page-header {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 2rem;
+}
+
+.fav-container .page-header .fav-header-input {
+  width: 350px;
+  background-color: #ffffff !important;
+  border: 1px solid #d9d9d9 !important;
+}
+
+.fav-container .post-list-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}

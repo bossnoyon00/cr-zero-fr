@@ -1,0 +1,44 @@
+.main-content {
+  margin-top: 10vh;
+  /* background-color: var(--background); */
+  background-color: #fafafa;
+  min-height: 90vh !important;
+  /* padding: 0.6rem 1.4rem; */
+}
+.ant-layout-header {
+  background-color: var(--primary) !important;
+
+  /* Need to remove this height */
+  height: 10vh !important;
+  line-height: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 6;
+  padding: 0 30px;
+  position: fixed;
+  z-index: 20;
+}
+.mainFooter {
+  padding: 0 !important;
+}
+.v-layout {
+  display: block;
+}
+.m-layout {
+  display: none;
+}
+
+.site-layout {
+  background-color: white !important;
+}
+
+@media (max-width: 850px) {
+  .v-layout {
+    display: none;
+  }
+  .m-layout {
+    display: block;
+  }
+}

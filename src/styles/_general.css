@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Proximanova-Regular';
+  /* background-color: #eaeaea; */
+}
+
+.swal-text {
+  text-align: center !important;
+}
+
+.empty {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.m-20 {
+  margin: 20px 0;
+}

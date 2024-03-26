@@ -1,0 +1,45 @@
+.landing-container {
+  height: 100vh;
+  display: flex;
+  background-color: #1677ff;
+}
+
+.landing-container .left-container {
+  flex: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+}
+
+.landing-container .left-container .shape {
+  width: 100%;
+  height: 0;
+  /* background-color: #fa8c16; */
+  border-left: 0 solid transparent;
+  border-right: 170px solid transparent;
+  border-top: 100vh solid #fa8c16;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.landing-container .right-container {
+  flex: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* background-color: #1677ff; */
+}
+
+.landing-container .custom-btn {
+  width: 160px !important;
+  height: 50px;
+  font-size: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 45%;
+  margin-bottom: 120px;
+}

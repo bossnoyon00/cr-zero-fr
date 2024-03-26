@@ -1,0 +1,98 @@
+.filter-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.filter-container .home-input {
+  background-color: #ffffff !important;
+  border: 1px solid #d9d9d9 !important;
+}
+
+.filter-container .custom-filter-input {
+  border-radius: 10px !important;
+}
+
+.filter-container .custom-filter-input input {
+  border: none !important;
+}
+
+.filter-container .custom-filter-input input:focus {
+  box-shadow: none !important;
+}
+
+.filter-container .custom-filter-input .ant-input-group-addon {
+  border: none !important;
+  background: transparent !important;
+}
+
+.filter-container
+  .custom-filter-input
+  .ant-input-group-addon
+  .ant-select:hover
+  .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.filter-container .filter-label-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.filter-container .filter-label-container label {
+  color: var(--primary);
+  font-weight: 600;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.filter-container .check-label-container span {
+  color: black !important;
+  font-weight: 400 !important;
+}
+
+.filter-container .filter-label-container .two-input-filter-container {
+  display: flex !important;
+  align-items: center !important;
+  column-gap: 0.5rem !important;
+}
+
+.filter-container .filter-label-container .clear-filter-btn {
+  width: max-content !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: transparent;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  transition: all 0.3s ease;
+}
+
+.filter-container .filter-label-container .clear-filter-btn:hover {
+  color: white !important;
+  background: var(--primary) !important;
+}
+
+.filter-container .filter-label-container .filter-ad {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+@media (max-width: 850px) {
+  .filter-container .filter-label-container .two-input-filter-container {
+    flex-direction: column !important;
+    row-gap: 1rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .filter-container .filter-label-container label {
+    font-size: 12px !important;
+  }
+}

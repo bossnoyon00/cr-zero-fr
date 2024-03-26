@@ -1,0 +1,47 @@
+/* Third Party CSS */
+
+/* Theme CSS */
+@import './_general.css';
+@import './_antd.css';
+
+/* Layout CSS */
+@import './layout/verticalLayout.css';
+@import './layout/MainMenu.css';
+@import './layout/layout.css';
+@import './layout/mobileLayout.css';
+
+/* Component CSS */
+@import './components/navbar.css';
+@import './components/footercomponent.css';
+@import './components/post.css';
+@import './components/postNew.css';
+@import './components/createPostForm.css';
+@import './components/postDescModal.css';
+@import './components/profile.css';
+@import './components/favPosts.css';
+@import './components/expiredPost.css';
+@import './components/reportedPost.css';
+@import './components/filterComp.css';
+@import './components/filterDrawer.css';
+
+/* Page CSS */
+@import './pages/login.css';
+@import './pages/home.css';
+@import './pages/landing.css';
+@import './pages/landing2.css';
+@import './pages/createPostPage.css';
+@import './pages/favPostPage.css';
+@import './pages/settings.css';
+@import './pages/privacyPolicy.css';
+
+/* Font-Face */
+@font-face {
+  font-family: Proximanova-Regular;
+  /* src: url(../assets//Fonts/Proximanova-regular.otf); */
+  src: url(../assets//Fonts2/Proxima\ Nova\ Font.otf);
+}
+
+@font-face {
+  font-family: Proximanova-SemiBold;
+  src: url(../assets//Fonts/Proximanova-semibold.otf);
+}

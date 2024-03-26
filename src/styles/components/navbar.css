@@ -1,0 +1,73 @@
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-container .left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container .left img {
+  width: 250px;
+}
+
+.fa-caret-down {
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-container .left .nav-icon {
+  color: var(--customWhite) !important;
+  font-family: 'Proximanova-Regular' !important;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.nav-container .right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-container .right .nav-link {
+  padding: 13px 10px;
+  color: var(--customWhite) !important;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Proximanova-Regular' !important;
+}
+
+.nav-drop-down {
+  padding: 13px 10px !important;
+  color: var(--customWhite) !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.nav-drop-down svg {
+  margin-left: 4px !important;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-drop-down:hover {
+  cursor: pointer !important;
+}
+
+.header-avatar {
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.ant-dropdown-menu {
+  width: 120px !important;
+}
+
+.ant-dropdown-menu-title-content div {
+  color: var(--primary) !important;
+}

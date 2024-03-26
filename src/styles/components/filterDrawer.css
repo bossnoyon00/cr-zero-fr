@@ -1,0 +1,45 @@
+.filter-drawer-container .filter-drawer-btn {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.filter-drawer-container .filter-drawer-btn:hover {
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.filter-drawer-container .filter-drawer-btn .para {
+  margin-bottom: 0 !;
+  color: var(--primary);
+}
+
+.filter-drawer .ant-drawer-header {
+  display: none !important;
+}
+
+.filter-drawer .ant-drawer-body {
+  padding-top: 50px !important;
+  background-color: white !important;
+}
+
+@media (max-width: 500px) {
+  .filter-drawer-container .filter-drawer-btn {
+    padding: 10px 15px;
+  }
+
+  .filter-drawer-container .filter-drawer-btn .para {
+    display: none;
+  }
+
+  .filter-drawer-container .filter-drawer-btn svg {
+    width: 25px !important;
+    height: 25px !important;
+  }
+}

@@ -1,0 +1,90 @@
+.ant-btn-link {
+  font-weight: bold !important;
+  padding: 4px 0;
+}
+.ant-btn-primary {
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 40px;
+}
+.ant-input,
+.ant-picker {
+  height: 37px;
+  border-radius: 10px;
+}
+.ant-form-item-label label {
+  letter-spacing: 1px;
+  color: var(--text) !important;
+}
+.ant-checkbox-wrapper {
+  padding: 5px 0;
+}
+.ant-divider-vertical {
+  height: auto;
+  /* border-left: 2px solid rgba(0, 0, 0, 0.06); */
+  border-left: 1px solid rgba(138, 27, 106, 50%);
+}
+
+.ant-pagination-total-text {
+  display: flex;
+  margin-right: auto;
+}
+
+.ant-modal {
+  top: 50px !important;
+}
+
+.ant-modal-content {
+  /* background-color: var(--cardColor) !important; */
+  background-color: #fff !important;
+}
+.ant-modal-close-x {
+  color: var(--text) !important;
+}
+.ant-modal-header {
+  /* background-color: var(--cardColor) !important; */
+  /* background-color: #f5f5f5 !important; */
+}
+.ant-modal-title {
+  color: var(--text) !important;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  height: 37px;
+  border-radius: 10px;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.ant-input {
+  background-color: transparent !important;
+  border: 1.6px solid var(--borderLight);
+  border-radius: 4px;
+  color: var(--text) !important;
+}
+.ant-form-item-has-error :not(.ant-input-disabled):not(.ant-input-borderless).ant-input {
+  background-color: transparent !important;
+}
+.ant-drawer-body {
+  /* background-color: var(--sidebar) !important; */
+  background-color: var(--primary) !important;
+}
+
+.ant-form label {
+  font-size: 18px !important;
+}
+
+.ant-form .ant-input {
+  font-size: 18px !important;
+  height: 40px !important;
+}
+
+.ant-form .ant-btn {
+  font-size: 18px !important;
+}
+
+.ant-form h2 {
+  font-size: 26px !important;
+}
