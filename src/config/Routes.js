@@ -22,26 +22,23 @@ const Routers = () => {
       <ScrollToTop />
       <Routes>
         <Route element={<PrivateWrapper />}>
-          <Route path="/frontend/home" element={<Home />} />
-          <Route path="/frontend/create-post" element={<CreatePostPage />} />
-          <Route path="/frontend/settings" element={<Account />} />
-          <Route path="/frontend/programs" element={<Programs />} />
-          <Route
-            path="/frontend/change-password"
-            element={<PasswordUpdatePage />}
-          />
+          <Route path="/home" element={<Home />} />
+          <Route path="/create-post" element={<CreatePostPage />} />
+          <Route path="/settings" element={<Account />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/change-password" element={<PasswordUpdatePage />} />
         </Route>
         <Route element={<LoggedInRoute />}>
-          <Route path="/frontend/" element={<MyLanding />} />
+          <Route path="/" element={<MyLanding />} />
         </Route>
-        <Route path="/frontend/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         {/* <Route path='/signup' element={<SignUp />} /> */}
-        <Route path="/frontend/privacy_policy" element={<PrivacyPolicy />} />
-        <Route path="/frontend/terms" element={<TermsOfUse />} />
-        <Route path="/frontend/about" element={<AboutUs />} />
-        <Route path="/frontend/contact" element={<ContactUs />} />
-        <Route path="/frontend/support" element={<UserSupport />} />
-        <Route path="/frontend/faqs" element={<Faq />} />
+        <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/support" element={<UserSupport />} />
+        <Route path="/faqs" element={<Faq />} />
       </Routes>
     </BrowserRouter>
   );
