@@ -186,14 +186,14 @@ export const reportPost = (payload, setIsModalOpen) => {
       const res = await privateAPI.post("/post/report", payload);
       if (res?.data) {
         setIsModalOpen?.(false);
-        dispatch(
-          getPosts(
-            {
-              page: 1,
-            },
-            false
-          )
-        );
+        // dispatch(
+        //   getPosts(
+        //     {
+        //       page: 1,
+        //     },
+        //     false
+        //   )
+        // );
       }
     } catch (err) {
       notification.error({
