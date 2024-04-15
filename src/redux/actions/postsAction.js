@@ -185,7 +185,7 @@ export const reportPost = (payload, setIsModalOpen) => {
       attachToken();
       const res = await privateAPI.post("/post/report", payload);
       if (res?.data) {
-        setIsModalOpen(false);
+        setIsModalOpen?.(false);
         dispatch(
           getPosts(
             {
