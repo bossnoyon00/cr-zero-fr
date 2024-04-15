@@ -24,17 +24,16 @@ import { sendNotifications } from "./notificationAction";
 export const createPost = (payload) => {
   return async (dispatch) => {
     try {
-      
-      dispatch({type: CREATE_POST_REQUEST})
+      dispatch({ type: CREATE_POST_REQUEST });
       attachToken();
       const res = await privateAPI.post("/post/create", payload.data);
       if (res) {
         dispatch(sendNotifications(payload.socket, payload.receiverId));
         payload.navigate("/home");
       }
-      dispatch({type: CREATE_POST_SUCCESS})
+      dispatch({ type: CREATE_POST_SUCCESS });
     } catch (err) {
-      dispatch({type: CREATE_POST_FAIL})
+      dispatch({ type: CREATE_POST_FAIL });
       notification.error({
         message: err?.response?.data?.message || "Server Error",
         duration: 3,
@@ -197,6 +196,10 @@ export const reportPost = (payload, setIsModalOpen) => {
         );
       }
     } catch (err) {
+      notification.error({
+        message: err?.response?.data?.message,
+        duration: 3,
+      });
       console.log(err);
     }
   };
