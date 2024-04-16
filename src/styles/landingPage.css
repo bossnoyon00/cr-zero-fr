@@ -523,7 +523,8 @@ a.linkp {
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  padding-left: 5rem;
+  padding-right: 3rem;
+  /* padding-left: -rem; */
   width: 40%;
 }
 
@@ -573,12 +574,12 @@ a.linkp {
 
 .contact-white input {
   font-size: 14px;
-  padding: 0.9rem 2.7rem;
+  padding: 0.9rem 1.2rem;
 }
 
 .contact-white textarea {
   font-size: 14px;
-  padding: 0.9rem 2.7rem;
+  padding: 0.9rem 1.2rem 3rem;
 }
 
 .contact-white button {
