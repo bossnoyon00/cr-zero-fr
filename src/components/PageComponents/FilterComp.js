@@ -512,8 +512,8 @@ const FilterComp = ({
         <div className="filter-label-container">
           {/* <Skeleton.Image className="filter-ad" active={false} /> */}
           {/* <img style={{ width: "100%" }} src={Img} /> */}
-          <AdsComponent />
-          {/* <AdsCom /> */}
+          {/* <AdsComponent /> */}
+          <AdsCom />
         </div>
       }
     </div>
