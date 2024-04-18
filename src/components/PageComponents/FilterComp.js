@@ -3,8 +3,9 @@ import { Select, Input, Checkbox, Button } from "antd";
 import { useSelector } from "react-redux";
 import { BsSearch } from "react-icons/bs";
 
-// import Img from '../../assets/kitkat.jpg'
-// import AdsComponent from '../other/AdComponent'
+// import Img from "../../assets/kitkat.jpg";
+import AdsComponent from "../other/AdComponent";
+import AdsCom from "../other/AdsCom";
 
 const FilterComp = ({
   countryList,
@@ -387,7 +388,10 @@ const FilterComp = ({
             value={commissionState.cash}
             checked={commissionState.cash}
             onChange={() => {
-              setCommissionState({...commissionState, cash: !commissionState.cash})
+              setCommissionState({
+                ...commissionState,
+                cash: !commissionState.cash,
+              });
             }}
           >
             Cash
@@ -396,7 +400,10 @@ const FilterComp = ({
             value={commissionState.reward}
             checked={commissionState.reward}
             onChange={() => {
-              setCommissionState({...commissionState, reward: !commissionState.reward})
+              setCommissionState({
+                ...commissionState,
+                reward: !commissionState.reward,
+              });
             }}
           >
             Reward
@@ -501,13 +508,14 @@ const FilterComp = ({
           Clear
         </Button>
       </div>
-      {!userProfileDetails?.blockAds && (
+      {
         <div className="filter-label-container">
-          {/* <Skeleton.Image className='filter-ad' active={false} /> */}
-          {/* <img style={{ width: '100%' }} src={Img} /> */}
-          {/* <AdsComponent /> */}
+          {/* <Skeleton.Image className="filter-ad" active={false} /> */}
+          {/* <img style={{ width: "100%" }} src={Img} /> */}
+          <AdsComponent />
+          {/* <AdsCom /> */}
         </div>
-      )}
+      }
     </div>
   );
 };
