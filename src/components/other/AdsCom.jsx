@@ -29,16 +29,13 @@ const AdsCom = () => {
   }, []);
 
   return (
-    <div
-      className="ad-container"
-      style={{ width: "100%", minHeight: "200px", minWidth: "200px" }}
-    >
+    <div className="ad-container" style={{ width: "100%", minHeight: "200px" }}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-4138948380889817"
         data-ad-slot="6492796744"
-        data-ad-format="auto"
+        // data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>
     </div>
