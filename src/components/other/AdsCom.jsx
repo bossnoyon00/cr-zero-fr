@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 
 const AdsCom = () => {
   useEffect(() => {
@@ -15,9 +15,17 @@ const AdsCom = () => {
     };
   }, []);
 
-  useLayoutEffect(() => {
-    // Render ad after script has loaded
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  useEffect(() => {
+    // Wait for window to load before rendering ad
+    const onLoad = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    };
+
+    window.addEventListener("load", onLoad);
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+    };
   }, []);
 
   return (
