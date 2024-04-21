@@ -29,7 +29,10 @@ const AdsCom = () => {
   }, []);
 
   return (
-    <div className="ad-container" style={{ width: "100%", minHeight: "200px" }}>
+    <div
+      className="ad-container"
+      style={{ width: "100%", minHeight: "200px", minWidth: "200px" }}
+    >
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
