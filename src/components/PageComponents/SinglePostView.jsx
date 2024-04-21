@@ -218,9 +218,7 @@ const SinglePostView = ({ data, isModalOpen2, setIsModalOpen2 }) => {
                       ${singlePost?.price || 0}
                     </p>
                   </div>
-                  <div
-                    className={`w-full flex items-center justify-between`}
-                  >
+                  <div className={`w-full flex items-center justify-between`}>
                     <span className="text-base mobile:text-xs">Commision:</span>
                     <p className="para-2 mobile:!text-xs">
                       {singlePost.comission?.length === 2 && (
@@ -248,7 +246,7 @@ const SinglePostView = ({ data, isModalOpen2, setIsModalOpen2 }) => {
                         )}
                     </p>
                   </div>
-                  
+
                   <div className="w-full flex items-center">
                     <span className="text-base mobile:text-xs w-full flex items-center justify-between">
                       Self-Purchase:{" "}

@@ -86,7 +86,7 @@ export const getPosts = (payload, loadState = true) => {
         type: typeState,
         purchaseFirst: purchaseFirstYes ? true : purchaseFirstNo ? false : "",
         page: page,
-        limit: 10,
+        limit: 8,
       });
       if (res) {
         dispatch({
