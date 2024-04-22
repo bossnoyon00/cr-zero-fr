@@ -862,6 +862,248 @@ ul.submenu li {
 
 /* Tablet Design */
 
+@media (max-width: 1500px) {
+  .contact-top {
+    flex-direction: column;
+    position: static;
+    width: 90vw;
+    height: auto;
+  }
+
+  .new {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-red {
+    padding: 2rem 2rem;
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+  }
+
+  .new div {
+    margin-top: 0rem;
+  }
+
+  .new div p {
+    font-size: 18px;
+  }
+
+  .contact-red h3 {
+    font-size: 32px;
+  }
+
+  .contact-white {
+    margin-block: 3rem;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .contact-white input,
+  .contact-white textarea {
+    margin-top: 18px;
+  }
+
+  .contact-white input {
+    font-size: 18px;
+    padding: 1rem 4rem 1rem 1rem;
+  }
+
+  .contact-white textarea {
+    font-size: 18px;
+    padding: 1rem 4rem 0rem 1rem;
+  }
+
+  .contact-white h2 {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .contact-white p {
+    padding-block: 0rem;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .inverted {
+    width: 300px;
+  }
+
+  .aboutustop {
+    padding: 2rem;
+  }
+
+  .privacy,
+  .termsofuse {
+    padding: 2rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+    background-color: var(--orange);
+  }
+
+  .inf,
+  .biz {
+    flex-direction: column;
+  }
+
+  .inf p,
+  .biz p {
+    text-align: justify;
+  }
+
+  .column {
+    padding-left: 0rem;
+  }
+
+  .padd-left {
+    padding-left: 0rem;
+    margin-right: 0;
+  }
+
+  .padd {
+    padding-right: 0rem;
+  }
+
+  .hero-left {
+    width: 100%;
+    padding: 4rem 2rem;
+    background-size: 300px 300px;
+    background-position: center bottom;
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 4rem 2rem;
+    align-items: center;
+    background-size: 500px 400px;
+    clip-path: none;
+  }
+
+  .hero-left:hover,
+  .hero-right:hover {
+    width: 100%;
+  }
+
+  .about-top {
+    padding: 2rem;
+  }
+
+  /* .column {
+        padding-right: 0;
+    } */
+
+  /* .horizontal {
+        display: none;
+    } */
+
+  .span {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about-bottom {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .bottom-left,
+  .bottom-right {
+    width: 100%;
+    border: none;
+    text-align: center;
+  }
+
+  .bottom-left {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .bottom-right {
+    margin-top: 2rem;
+  }
+
+  .horizontall {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    height: 0px;
+    border: 2px solid var(--navy-blue);
+    width: 35%;
+  }
+
+  a.follow-us,
+  a.middle-link,
+  a.big-link,
+  a.small-links {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .column,
+  .padd-left {
+    border-bottom: 4px solid var(--navy-blue);
+  }
+
+  .column {
+    padding-inline: 2rem;
+  }
+
+  img.left-image {
+    display: none;
+  }
+
+  .padd {
+    padding-right: 2rem;
+  }
+
+  .user-support {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+  }
+
+  .new-case {
+    margin-bottom: 20px;
+  }
+
+  .new-case img,
+  .live-chat img {
+    width: 80px;
+  }
+
+  .accordion-container {
+    width: 90%;
+  }
+
+  .header-container {
+    text-align: center;
+  }
+
+  .faq-header {
+    font-size: 24px;
+  }
+
+  .faq-content {
+    font-size: 16px;
+  }
+
+  .accordion > li {
+    padding-right: 10px;
+    margin-left: -10px;
+  }
+}
+
 @media (max-width: 900px) {
   .contact-top {
     flex-direction: column;
