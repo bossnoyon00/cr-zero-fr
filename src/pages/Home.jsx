@@ -217,10 +217,12 @@ const Home = () => {
                   {/* <Button type='primary' className='view-more-btn' onClick={() => setPage(page + 1)}>
                     View More
                   </Button> */}
+                  {console.log("totalLivePosts", totalLivePosts)}
                   <Pagination
                     defaultCurrent={page}
                     total={totalLivePosts}
                     onChange={(e) => setPage(e)}
+                    pageSize={6}
                   />
                 </div>
               </div>
