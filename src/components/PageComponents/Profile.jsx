@@ -8,7 +8,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoEyeOutline } from "react-icons/io5";
 import { publicAPI } from "../../config/constants";
 import Loader from "../other/Loader";
-
+import Resizer from "react-image-file-resizer";
 const Profile = () => {
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state) => state?.userReducer);
@@ -32,7 +32,7 @@ const Profile = () => {
     reader.onload = () => {
       if (reader.readyState === 2) {
         setAvatarPreview(reader.result);
-        setFile(reader.result);
+        setFile(e.target.files[0]);
       }
     };
     reader.readAsDataURL(e.target.files[0]);
@@ -40,11 +40,27 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const resizeFile = (file) =>
+      new Promise((resolve) => {
+        Resizer.imageFileResizer(
+          file,
+          512,
+          512,
+          "JPEG",
+          100,
+          0,
+          (uri) => {
+            resolve(uri);
+          },
+          "base64"
+        );
+      });
 
+    const f = await resizeFile(file);
     dispatch(
       updateProfile({
         ...userData,
-        avatar: file,
+        avatar: f,
       })
     );
 
