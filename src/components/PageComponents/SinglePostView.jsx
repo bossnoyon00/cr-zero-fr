@@ -29,7 +29,7 @@ const SinglePostView = ({ data, isModalOpen2, setIsModalOpen2 }) => {
   const [currentCommentId, setCurrentCommentId] = useState("");
   const [totalLikes, setTotalLikes] = useState("");
   const [liked, setLiked] = useState(false);
-
+  const [disabled, setDisabled] = useState(false);
   const {
     singlePost,
     getPostLoading,
@@ -297,24 +297,31 @@ const SinglePostView = ({ data, isModalOpen2, setIsModalOpen2 }) => {
                     </p>
                     <div
                       className="flex items-center justify-center mt-1 "
-                      onClick={() => {
-                        setLiked(!liked);
-                        setTotalLikes(liked ? totalLikes - 1 : totalLikes + 1);
-
-                        dispatch(
-                          postReact({
-                            tab: "singlePost",
-                            post: data?._id,
-                            react:
-                              singlePost?.likes?.filter(
-                                (item) => item === user?._id
-                              ).length > 0
-                                ? false
-                                : true,
-                            posts: livePosts,
-                          })
-                        );
-                      }}
+                      onClick={
+                        disabled
+                          ? () => {}
+                          : async () => {
+                              setLiked(!liked);
+                              setTotalLikes(
+                                liked ? totalLikes - 1 : totalLikes + 1
+                              );
+                              setDisabled(true);
+                              await dispatch(
+                                postReact({
+                                  tab: "singlePost",
+                                  post: data?._id,
+                                  react:
+                                    singlePost?.likes?.filter(
+                                      (item) => item === user?._id
+                                    ).length > 0
+                                      ? false
+                                      : true,
+                                  posts: livePosts,
+                                })
+                              );
+                              setDisabled(false);
+                            }
+                      }
                     >
                       {liked ? (
                         <BsFillHeartFill

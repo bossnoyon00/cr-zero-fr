@@ -27,6 +27,7 @@ import DOMPurify from "dompurify";
 
 const PostNew = ({ data, tabName }) => {
   const dispatch = useDispatch();
+  const [disabled, setDisabled] = useState(false);
   const { user } = useSelector((state) => state.userReducer);
   const { livePosts } = useSelector((state) => state.postReducer);
   const navigate = useNavigate();
@@ -106,21 +107,27 @@ const PostNew = ({ data, tabName }) => {
             {tabName !== "reported" && (
               <div
                 className="border border-black border-r-transparent border-b-[rgba(0,0,0,0.5)] rounded-l-md p-[10px] flex items-center justify-center bg-white"
-                onClick={() => {
-                  setLiked(!liked);
-                  dispatch(
-                    postReact({
-                      tab: tabName,
-                      post: data?._id,
-                      react:
-                        data?.likes?.filter((item) => item === user?._id)
-                          .length > 0
-                          ? false
-                          : true,
-                      posts: livePosts,
-                    })
-                  );
-                }}
+                onClick={
+                  disabled
+                    ? () => {}
+                    : async () => {
+                        setLiked(!liked);
+                        setDisabled(true);
+                        await dispatch(
+                          postReact({
+                            tab: tabName,
+                            post: data?._id,
+                            react:
+                              data?.likes?.filter((item) => item === user?._id)
+                                .length > 0
+                                ? false
+                                : true,
+                            posts: livePosts,
+                          })
+                        );
+                        setDisabled(false);
+                      }
+                }
               >
                 {liked ? (
                   <BsFillHeartFill className="text-[#ff3339] w-[30px] h-[30px] transition-all duration-300 hover:text-[#ff333ad8] cursor-pointer" />
@@ -247,20 +254,28 @@ const PostNew = ({ data, tabName }) => {
               {tabName !== "reported" && (
                 <div
                   className="border border-black border-t-transparent border-b-[rgba(0,0,0,0.5)] rounded-bl-md  p-[10px] flex items-center justify-center bg-white"
-                  onClick={() => {
-                    setLiked(!liked);
-                    dispatch(
-                      postReact({
-                        tab: tabName,
-                        post: data?._id,
-                        react:
-                          data?.likes?.filter((item) => item === user?._id)
-                            .length > 0
-                            ? false
-                            : true,
-                      })
-                    );
-                  }}
+                  onClick={
+                    disabled
+                      ? () => {}
+                      : async () => {
+                          setLiked(!liked);
+                          setDisabled(true);
+                          await dispatch(
+                            postReact({
+                              tab: tabName,
+                              post: data?._id,
+                              react:
+                                data?.likes?.filter(
+                                  (item) => item === user?._id
+                                ).length > 0
+                                  ? false
+                                  : true,
+                              posts: livePosts,
+                            })
+                          );
+                          setDisabled(false);
+                        }
+                  }
                 >
                   {liked ? (
                     <BsFillHeartFill className="text-[#ff3339] w-[20px] h-[20px] transition-all duration-300 hover:text-[#ff333ad8] cursor-pointer" />
