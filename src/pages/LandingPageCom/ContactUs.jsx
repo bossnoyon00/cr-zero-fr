@@ -1,14 +1,14 @@
 import React from "react";
 import Footer from "./Footer";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFax } from "react-icons/fa";
-import TWITTER from '../../assets/twitter-x.svg'
+import TWITTER from "../../assets/twitter-x.svg";
 import ContactForm from "../../components/other/ContactForm";
 import { NavLink } from "react-router-dom";
 import MetaData from "../../components/other/MetaData";
 function ContactUs() {
   return (
     <div className="cc">
-      <MetaData title={'Contact Affiliated Refer'} />
+      <MetaData title={"Contact Affiliated Refer"} />
       <div className="contactus-page">
         <div className="contact-top">
           <div className="contact-red">
@@ -36,7 +36,14 @@ function ContactUs() {
             <div>
               <h2>Get in Direct Contact</h2>
               <p>
-                If you're seeking support as a user, please go to <NavLink to={'/support'}className="text-[#0e9af2] hover:text-blue-300 font-semibold">User Support</NavLink>.
+                If you're seeking support as a user, please go to{" "}
+                <NavLink
+                  to={"/support"}
+                  className="text-[#0e9af2] hover:text-blue-300 font-semibold"
+                >
+                  User Support
+                </NavLink>
+                .
               </p>
             </div>
             <ContactForm
@@ -44,7 +51,7 @@ function ContactUs() {
                 "Please state your concerns and add necessary details here…"
               }
               bgColor={""}
-              page={'contact'}
+              page={"contact"}
             />
           </div>
         </div>

@@ -11,14 +11,20 @@ function UserSupport() {
 
   return (
     <div className="support-container">
-      <MetaData title={'Get User Support'} />
+      <MetaData title={"Get User Support"} />
       <p className="support-header">
-        For business related queries and legal delegations, please go to <NavLink to={'/contact'}className="text-[#0e9af2] hover:text-blue-300 font-semibold">Contact
-        Us</NavLink>.
+        For business related queries and legal delegations, please go to{" "}
+        <NavLink
+          to={"/contact"}
+          className="text-[#0e9af2] hover:text-blue-300 font-semibold"
+        >
+          Contact Us
+        </NavLink>
+        .
       </p>
       <div className="user-support">
         <div className="new-case">
-          <img src={liveChat} width="100px" alt="Live Chat" />
+          <img src={newCase} width="100px" alt="Live Chat" />
           <h3>NEW CASE</h3>
           <p>
             Open a new case for any problems and concerns that you might have,
@@ -28,7 +34,7 @@ function UserSupport() {
           <button onClick={() => setOpen(true)}>Add a New Case</button>
         </div>
         <div className="live-chat">
-          <img src={newCase} width="100px" alt="New Case" />
+          <img src={liveChat} width="100px" alt="New Case" />
           <h3>LIVE CHAT</h3>
           <p>
             Start chatting with our support agents dedicated to help resolve any
@@ -62,14 +68,12 @@ function UserSupport() {
 
       <div
         className={`bg-white shadow-[0px_0px_10px_0px_rgba(62,66,66,0.45)] fixed bottom-5 transition-all ease-in-out duration-500 p-5 rounded-md ${
-          open ? " left-5 opacity-[1] mobile:left-[50%] mobile:translate-x-[-50%] " : " left-[-350px] opacity-0 "
+          open
+            ? " left-5 opacity-[1] mobile:left-[50%] mobile:translate-x-[-50%] "
+            : " left-[-350px] opacity-0 "
         } `}
       >
-        <ContactForm
-          open={open}
-          page={'support'}
-          bgColor={"#f26422"}
-        />
+        <ContactForm open={open} page={"support"} bgColor={"#f26422"} />
       </div>
       <Footer />
     </div>
