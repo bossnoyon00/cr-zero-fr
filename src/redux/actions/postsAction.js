@@ -120,7 +120,7 @@ export const postReact = (payload) => {
 
       if (data) {
         if (payload?.tab === "fav") {
-          dispatch(getAllPosts());
+          await dispatch(getAllPosts());
         } else if (payload?.tab === "singlePost") {
           let posts = payload?.posts;
 
@@ -129,13 +129,14 @@ export const postReact = (payload) => {
           if (index !== -1) {
             posts.splice(index, 1, post);
           }
-          dispatch({
+
+          await dispatch({
             type: GET_LIVE_POSTS,
             payload: {
               data: posts,
             },
           });
-          dispatch({ type: GET_POST, payload: post });
+          await dispatch({ type: GET_POST, payload: post });
         } else {
           let posts = payload?.posts;
 
@@ -144,7 +145,7 @@ export const postReact = (payload) => {
           if (index !== -1) {
             posts.splice(index, 1, post);
           }
-          dispatch({
+          await dispatch({
             type: GET_LIVE_POSTS,
             payload: {
               data: posts,
