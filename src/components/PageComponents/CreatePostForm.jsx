@@ -89,7 +89,7 @@ const CreatePostForm = () => {
           "base64"
         );
       });
-    const f = await resizeFile(postImage);
+    const f = postImage ? await resizeFile(postImage) : postImage;
     const data = {
       title: postTitle,
       postImage: f,

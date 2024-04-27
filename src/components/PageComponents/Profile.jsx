@@ -56,7 +56,7 @@ const Profile = () => {
         );
       });
 
-    const f = await resizeFile(file);
+    const f = file ? await resizeFile(file) : file;
     dispatch(
       updateProfile({
         ...userData,
