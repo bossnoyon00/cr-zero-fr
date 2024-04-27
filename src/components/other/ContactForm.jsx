@@ -65,7 +65,7 @@ const ContactForm = ({ open, page }) => {
   }, [success, message, error, dispatch]);
 
   return (
-    <form onSubmit={handleSubmit} className="w-[90%]">
+    <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-3 items-center">
         <input
           type="text"
