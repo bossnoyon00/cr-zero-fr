@@ -1,17 +1,36 @@
-# build environment
-FROM node:20.10.0 as builder
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-COPY . /usr/src/app
-RUN npm install --legacy-peer-deps
+# Use an official Node.js runtime as a parent image
+FROM node:21-alpine3.17
+
+# Set the working directory inside the container
+WORKDIR /app
+
+COPY . .
+
+# Copy package.json and package-lock.json to the working directory
+# COPY package*.json ./
+
+
+
+# Copy the rest of the application code to the working directory
+# COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Build the React application for production
 RUN npm run build
 
-# production environment
-FROM nginx:1.13.9-alpine
-RUN rm -rf /etc/nginx/conf.d
-RUN mkdir -p /etc/nginx/conf.d
-COPY ./default.conf /etc/nginx/conf.d/
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Install a simple HTTP server to serve the built React application
+RUN npm install -g serve
+
+# Set the environment variable to serve the built files from build folder
+ENV REACT_APP_PORT 4000
+
+# Start the HTTP server and serve the built files
+CMD ["serve", "-s", "build", "-l", "4000"]
+
+# Expose port 4000 to the outside world
+EXPOSE 4000
+
+
+

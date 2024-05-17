@@ -1,0 +1,32 @@
+name: build + publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: matootie/github-docker@v3.1.0
+        with:
+          accessToken: ${{ github.token }}
+          containerRegistry: true
+          buildArgs: |
+            PUBLIC_HELLO=world
+      - name: Deploy on CapRover
+        uses: caprover/deploy-from-github@v1.1.2
+        with:
+          server: https://affiliatedrefer.com
+          app: "affiliatedrefer-fe"
+          token: "${{ secrets.APP_TOKEN }}"
+          image: "ghcr.io/dawoodali23/affiliatedrefer-fe:latest"
