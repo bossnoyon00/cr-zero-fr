@@ -15,7 +15,7 @@ COPY . .
 # COPY . .
 
 # Install dependencies
-RUN npm install
+RUN npm install -f
 
 # Build the React application for production
 RUN npm run build
