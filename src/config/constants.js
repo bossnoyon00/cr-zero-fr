@@ -1,8 +1,8 @@
 import Axios from "axios";
 
-// export const base_url = "http://localhost:5001";
+export const base_url = "http://localhost:5001";
 // export const base_url = "http://api.affiliatedrefer.com/";
-export const base_url = "https://api.affiliatedrefer.com/";
+// export const base_url = "https://api.affiliatedrefer.com/";
 // export const base_url = "http://82.180.130.214/";
 
 export const publicAPI = Axios.create({ baseURL: base_url });
