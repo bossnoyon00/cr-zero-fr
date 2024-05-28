@@ -45,7 +45,7 @@ function Footer() {
             Careers
           </p>
           <p className="text-navy-blue text-xl font-bold uppercase transition-all duration-500 ease-in-out hover:text-bright-blue mobile:text-base cursor-pointer ">
-            invest in us
+            Partners & Investors
           </p>
 
           <Link
@@ -181,7 +181,7 @@ function Footer() {
           </NavLink>
         </div>
         <p className="text-navy-blue font-medium">
-          &copy; 2023 affiliatedrefer.com
+          &copy; 2023 to 2024 affiliatedrefer.com
         </p>
       </div>
     </>

@@ -280,7 +280,7 @@ const FilterComp = ({
       </div>
 
       <div className="filter-label-container check-label-container">
-        <label>Price type</label>
+        <label>Price Type</label>
         <div
           style={{ display: "flex", alignItems: "center", columnGap: "1rem" }}
         >

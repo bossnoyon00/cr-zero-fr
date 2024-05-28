@@ -184,14 +184,14 @@ const Profile = () => {
                   Currenly Unavailable
                 </button>
               </div>
-              <div className="formItem">
+              {/* <div className="formItem">
                 <label>Payment-method</label>
                 <div className="paymentContainer">
                   <button className="disabled" disabled>
                     Go Premium
                   </button>
                 </div>
-              </div>
+              </div> */}
 
               <input type="submit" value="Update" className="btn" />
             </form>
