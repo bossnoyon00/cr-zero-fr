@@ -181,7 +181,7 @@ function Footer() {
           </NavLink>
         </div>
         <p className="text-navy-blue font-medium">
-          &copy; 2023 to 2024 affiliatedrefer.com
+          &copy; 2024 affiliatedrefer.com
         </p>
       </div>
     </>
