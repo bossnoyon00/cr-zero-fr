@@ -49,6 +49,7 @@ const Home = () => {
     dispatch(
       getPosts({
         sortFilter,
+        tagsFilter,
         searchFilter,
         categoryFilter,
         rangeFilter,
@@ -62,6 +63,7 @@ const Home = () => {
   }, [
     dispatch,
     sortFilter,
+    tagsFilter,
     searchFilter,
     countryFilter,
     rangeFilter,

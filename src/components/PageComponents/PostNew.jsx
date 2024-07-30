@@ -199,14 +199,14 @@ const PostNew = ({ data, tabName }) => {
             </div>
           </div>
           <div className="middle-right grid grid-cols-1 mobile:grid-cols-3 grid-rows-3 mobile:grid-rows-1">
-            <div className="flex justify-start items-center px-3 py-5 gap-6 border-black border-b mobile:border-b-transparent mobile:border-r mobile:px-2 mobile:justify-between mobile:gap-0 ">
+            <div className="flex justify-evenly items-center px-3 py-5 border-black border-b mobile:border-b-transparent mobile:border-r mobile:px-2 mobile:justify-between mobile:gap-0 ">
               <p className="text-base mobile:text-xs font-medium">PRICE:</p>
               <p className="text-base mobile:text-xs font-medium">
                 {!data?.price ? "Free" : `$${data?.price}`}
               </p>
             </div>
             <div
-              className={`flex items-center px-3 border-b mobile:border-b-transparent mobile:border-r border-black mobile:justify-between mobile:gap-0 mobile:px-2 ${
+              className={`flex justify-evenly items-center px-3 border-b mobile:border-b-transparent mobile:border-r border-black mobile:justify-between mobile:gap-0 mobile:px-2 ${
                 data.comission?.length === 2
                   ? "flex-col justify-center"
                   : "justify-start gap-5"
@@ -329,7 +329,7 @@ const PostNew = ({ data, tabName }) => {
             </div>
             {tabName === "my" && (
               <Button
-                className="flex items-center justify-center h-[60px] bg-white hover:bg-[#ff0000] border border-black border-t-[rgba(0,0,0,0.5)] border-l-transparent rounded-r-none rounded-br-md rounded-l-none [&>*]:text-[#ff0000] [&>*]:hover:text-white transition-all duration-300 ease-in-out "
+                className="flex items-center justify-center h-[60px] bg-white hover:bg-[#ff0000] border border-black border-t-[rgba(0,0,0,0.5)] border-l-transparent rounded-r-none rounded-br-md rounded-l-none [&>*]:text-[#ff0000] transition-all duration-300 ease-in-out "
                 onClick={() => deleteHandler(data?._id)}
               >
                 <FaRegTrashAlt className=" w-[26px] h-[26px] " />
@@ -341,6 +341,7 @@ const PostNew = ({ data, tabName }) => {
                 onClick={() => {
                   dispatch(rePostFn({ post: data?._id }, navigate));
                 }}
+                disabled={true}
               >
                 Repost
               </Button>
@@ -373,7 +374,7 @@ const PostNew = ({ data, tabName }) => {
           </div>
           {tabName === "my" && (
             <Button
-              className="flex items-center justify-center h-[60px] bg-white hover:bg-[#ff0000] border border-black border-t-[rgba(0,0,0,0.5)] border-l-transparent rounded-r-md rounded-l-none [&>*]:text-[#ff0000] [&>*]:hover:text-white transition-all duration-300 ease-in-out "
+              className="flex items-center justify-center h-[60px] bg-white hover:bg-[#ff0000] border border-black border-t-[rgba(0,0,0,0.5)] border-l-transparent rounded-r-md rounded-l-none [&>*]:text-[#ff0000] transition-all duration-300 ease-in-out "
               onClick={() => deleteHandler(data?._id)}
             >
               <FaRegTrashAlt className=" w-[26px] h-[26px] " />
@@ -385,6 +386,7 @@ const PostNew = ({ data, tabName }) => {
               onClick={() => {
                 dispatch(rePostFn({ post: data?._id }, navigate));
               }}
+              disabled={true}
             >
               RePost
             </Button>

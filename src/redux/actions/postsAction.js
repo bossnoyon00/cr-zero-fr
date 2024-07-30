@@ -17,6 +17,8 @@ import {
   ADD_COMMENT_REQUEST,
   ADD_COMMENT_SUCCESS,
   ADD_COMMENT_FAIL,
+  GET_POSTS_FROM_LAST_WEEK,
+  GET_POSTS_FROM_LAST_WEEK_REQUEST
 } from "../types/generalTypes";
 
 import { sendNotifications } from "./notificationAction";
@@ -39,6 +41,22 @@ export const createPost = (payload) => {
         duration: 3,
       });
     }
+  };
+};
+
+export const fetchPostsFromLastWeek = () => {
+  return async (dispatch) => {
+    try {
+      dispatch({ type: GET_POSTS_FROM_LAST_WEEK_REQUEST})
+      attachToken();
+      const res = await privateAPI.post("/post/fetch-posts-from-last-week");
+      if (res) {
+        dispatch({
+          type: GET_POSTS_FROM_LAST_WEEK,
+          payload: res?.data
+        });
+      }
+    } catch (err) {}
   };
 };
 

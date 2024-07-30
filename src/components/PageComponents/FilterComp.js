@@ -116,8 +116,8 @@ const FilterComp = ({
             setSearchFilter(e.target.value)
           }}
         />
-      </div>
-      <div className='filter-label-container'>
+      </div> */}
+      {/* <div className='filter-label-container'>
         <label>Filter by Tags</label>
         <Select
           className='home-select'

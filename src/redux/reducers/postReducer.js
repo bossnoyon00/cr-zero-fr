@@ -15,6 +15,8 @@ import {
   CREATE_POST_REQUEST,
   CREATE_POST_SUCCESS,
   CREATE_POST_FAIL,
+  GET_POSTS_FROM_LAST_WEEK,
+  GET_POSTS_FROM_LAST_WEEK_REQUEST
 } from "../types/generalTypes";
 
 const initialState = {
@@ -24,6 +26,8 @@ const initialState = {
   singlePost: {},
   getPostLoading: false,
   totalLivePosts: 0,
+  getPostsLastFromWeekLoading: false,
+  postsFromLastWeek: [],
 };
 
 const postReducer = (state = initialState, action) => {
@@ -132,6 +136,20 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         deleteCommentLoading: false,
+      };
+    }
+    case GET_POSTS_FROM_LAST_WEEK_REQUEST: {
+      return {
+        ...state,
+        getPostsLastFromWeekLoading: true,
+      };
+    }
+    case GET_POSTS_FROM_LAST_WEEK: {
+      return {
+        ...state,
+        // livePosts: payload.spread ? [...state.livePosts, ...payload.data] : payload.data,
+        postsFromLastWeek: payload.data,
+        getPostsLastFromWeekLoading: false,
       };
     }
     default:

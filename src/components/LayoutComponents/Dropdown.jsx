@@ -31,7 +31,7 @@ const Dropdown = () => {
         ></div>
       )}
       <div
-        className={`bg-white absolute  top-[62px] z-[99999] w-max shadow-[0px_0px_10px_2px_rgba(0,0,0,0.14)] rounded-[5px] p-1 flex-col items-start transition-all duration-500 ease-in-out ${
+        className={`bg-white absolute  top-[75px] z-[99999] w-max shadow-[0px_0px_10px_2px_rgba(0,0,0,0.14)] rounded-[5px] p-1 flex-col items-start transition-all duration-500 ease-in-out ${
           openDropdown ? "right-4 opacity-[1]" : "right-[-300px] opacity-0"
         } `}
       >

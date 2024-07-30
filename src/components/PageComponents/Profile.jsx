@@ -179,10 +179,25 @@ const Profile = () => {
                 />
               </div>
               <div className="formItem">
+                <button className="disabled" disabled>
+                  Go Premium – $6.99/Month
+                </button>
+                <p>Premium Features:</p>
+                <ul className="ml-2">
+                  <li> - No Ads</li>
+                  <li> - Increased limits for enlisting (up to 10 programs per week)</li>
+                  <li> - Ability to Repost expired programs instantly</li>
+                  <li> - Ability to view how many people clicked your link</li>
+                  <li> - Ability to sort posts by Most Hearted Saves</li>
+                  <li> - Ability to Verify your profile</li>
+                </ul>
+              </div>
+              <div className="formItem">
                 <label>Request for Verification</label>
                 <button className="disabled" disabled>
                   Currenly Unavailable
                 </button>
+                <p>Prove your authenticity and get a <b>verified checkmark</b> whether you're a business or an influencer. Unavailable without a premium account.</p>
               </div>
               {/* <div className="formItem">
                 <label>Payment-method</label>

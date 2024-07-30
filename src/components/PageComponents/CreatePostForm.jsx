@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Select, Checkbox, Radio, Tooltip } from "antd";
+import { Select, Checkbox, Radio, Tooltip, notification } from "antd";
 import { BsArrowLeft } from "react-icons/bs";
 import { FaAsterisk } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
@@ -8,7 +8,7 @@ import { GoQuestion } from "react-icons/go";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { createPost } from "../../redux/actions/postsAction";
+import { createPost, fetchPostsFromLastWeek } from "../../redux/actions/postsAction";
 import { countryDetailFn } from "../../redux/actions/countryAction";
 import Loader from "../other/Loader";
 import Resizer from "react-image-file-resizer";
@@ -19,7 +19,7 @@ const CreatePostForm = () => {
 
   const socket = useSelector((state) => state.socketReducer.socket);
   const { user } = useSelector((state) => state.userReducer);
-  const { loading } = useSelector((state) => state.postReducer);
+  const { postsFromLastWeek, getPostsLastFromWeekLoading, loading } = useSelector((state) => state.postReducer);
 
   const [postImagePreview, setPostImagePreview] = useState(null);
   const [countryList, setCountryList] = useState([]);
@@ -61,6 +61,10 @@ const CreatePostForm = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    dispatch(fetchPostsFromLastWeek());
+  }, [dispatch]);
+
   const handleImageInput = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -74,6 +78,13 @@ const CreatePostForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user.premium && postsFromLastWeek.length >= 4) {
+      notification.error({
+        message: "You have reached your enlisting limits for the week. Please subscribe to our premium plan to enlist more.",
+        duration: 3,
+      });
+      return;
+    }
     const resizeFile = (file) =>
       new Promise((resolve) => {
         Resizer.imageFileResizer(
@@ -125,7 +136,7 @@ const CreatePostForm = () => {
 
   return (
     <div className="w-[75vw] min-w-[800px] bg-white p-5 ">
-      {loading ? (
+      {(loading || getPostsLastFromWeekLoading) ? (
         <div className="min-h-[400px] flex items-center justify-center">
           <Loader />
         </div>
@@ -268,10 +279,10 @@ const CreatePostForm = () => {
                 onInputKeyDown={(e) => {
                   if (e.keyCode === 13 || e.keyCode === 32) {
                     if (tagsArr.length > 2) {
-                      tagsArr.splice(2, 1, e.target.value);
+                      tagsArr.splice(2, 1, e.target.value.replace(/\s+/g, ''));
                       setTagsArr([...tagsArr]);
                     } else {
-                      setTagsArr([...tagsArr, e.target.value]);
+                      setTagsArr([...tagsArr, e.target.value.replace(/\s+/g, '')]);
                     }
                     setTagsSearchValue("");
                   }
@@ -733,7 +744,7 @@ const CreatePostForm = () => {
             <button
               type="submit"
               style={{ width: "max-content" }}
-              className={`bg-[#1890ff] outline-none text-base rounded-[3px] px-4 py-1 border ${
+              className={`outline-none text-base rounded-[3px] px-4 py-1 border ${
                 postTitle.length !== 0 &&
                 postDesc.length !== 0 &&
                 checked !== null &&
@@ -744,9 +755,20 @@ const CreatePostForm = () => {
                 (typeReward ||
                   (typeCash && comissionValue.length !== 0 ? true : false)) &&
                 selectedPlan !== ""
-                  ? "border-transparent cursor-pointer text-white transition-all duration-300 ease-in-out hover:bg-white hover:border-[#1890ff] hover:text-[#1890ff]"
+                  ? "cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#1890ff] hover:border-[#1890ff] hover:text-white"
                   : "bg-[#f5f5f5] border border-[#cdcdcd] cursor-not-allowed text-gray-900"
-              }`}
+              }
+              ${
+                selectedPlan !== null &&
+                  moment(new Date().setDate(new Date().getDate() + 7)).format(
+                    "MMMM DD, YYYY"
+                  ) === selectedPlan ||
+                  moment(new Date().setMonth(new Date().getMonth() + 1)).format(
+                    "MMMM DD, YYYY"
+                  ) === selectedPlan
+                    ? "border-[#1890ff] text-[#1890ff]" : " bg-gray-300"
+              }
+              `}
               disabled={
                 postTitle.length !== 0 &&
                 postDesc.length !== 0 &&
