@@ -251,9 +251,9 @@ const SinglePostView = ({ data, isModalOpen2, setIsModalOpen2 }) => {
                     <span className="text-base mobile:text-xs w-full flex items-center justify-between">
                       Self-Purchase:{" "}
                       {singlePost?.purchaseFirst ? (
-                        <span style={{ color: "#1abd46" }}>Optional</span>
-                      ) : (
                         <span style={{ color: "darkred" }}>Required</span>
+                      ) : (
+                        <span style={{ color: "#1abd46" }}>Optional</span>
                       )}
                     </span>
                   </div>
